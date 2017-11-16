@@ -42,6 +42,7 @@ import com.android.systemui.qs.tiles.HotspotTile;
 import com.android.systemui.qs.tiles.LocationTile;
 import com.android.systemui.qs.tiles.NfcTile;
 import com.android.systemui.qs.tiles.NightDisplayTile;
+import com.android.systemui.qs.tiles.RebootTile;
 import com.android.systemui.qs.tiles.RotationLockTile;
 import com.android.systemui.qs.tiles.ScreenRecordTile;
 import com.android.systemui.qs.tiles.UiModeNightTile;
@@ -83,7 +84,11 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<ScreenRecordTile> mScreenRecordTileProvider;
     private final Provider<CaffeineTile> mCaffeineTileProvider;
     private final Provider<DcDimmingTile> mDcDimmingTileProvider;
+<<<<<<< HEAD
     private final Provider<DataSwitchTile> mDataSwitchTileProvider;
+=======
+    private final Provider<RebootTile> mRebootTileProvider;
+>>>>>>> ec2aef987ac (Add Reboot/Recovery QS Tile)
 
     private final Lazy<QSHost> mQsHostLazy;
 
@@ -109,6 +114,7 @@ public class QSFactoryImpl implements QSFactory {
             Provider<GarbageMonitor.MemoryTile> memoryTileProvider,
             Provider<UiModeNightTile> uiModeNightTileProvider,
             Provider<DcDimmingTile> dcDimTileProvider,
+            Provider<RebootTile> rebootTileProvider,
             Provider<ScreenRecordTile> screenRecordTileProvider,
             Provider<CaffeineTile> caffeineTileProvider,
             Provider<DataSwitchTile> dataSwitchTileProvider) {
@@ -135,7 +141,11 @@ public class QSFactoryImpl implements QSFactory {
         mScreenRecordTileProvider = screenRecordTileProvider;
         mCaffeineTileProvider = caffeineTileProvider;
         mDcDimmingTileProvider = dcDimTileProvider;
+<<<<<<< HEAD
         mDataSwitchTileProvider = dataSwitchTileProvider;
+=======
+        mRebootTileProvider = rebootTileProvider;
+>>>>>>> ec2aef987ac (Add Reboot/Recovery QS Tile)
     }
 
     public QSTile createTile(String tileSpec) {
@@ -191,8 +201,13 @@ public class QSFactoryImpl implements QSFactory {
                 return mCaffeineTileProvider.get();
             case "dc_dimming":
                 return mDcDimmingTileProvider.get();
+<<<<<<< HEAD
             case "dataswitch":
                 return mDataSwitchTileProvider.get();
+=======
+            case "reboot":
+                return mRebootTileProvider.get();
+>>>>>>> ec2aef987ac (Add Reboot/Recovery QS Tile)
         }
 
         // Custom tiles
